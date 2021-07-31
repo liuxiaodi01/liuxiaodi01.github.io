@@ -1,0 +1,526 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>javascript | 帅气男孩Mir.Liu</title><meta name="keywords" content="js,编程,高级语言"><meta name="author" content="liuxiaodi"><meta name="copyright" content="liuxiaodi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Ecmascript01 使用 window.alert()window.alert(“hello world”) 02 操作 HTML 元素 document.getElementById(“demo”)** 是使用 id 属性来查找 HTML 元素的 JavaScript 代码 。 innerHTML &#x3D; “段落已修改。”** 是用于修改元素的 HTML 内容(innerHTML)的 Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript">
+<meta property="og:url" content="https://github.com/liuxiaodi01/liuxiaodi01.github.io.git/2021/07/31/%E4%BB%A3%E7%A0%81%E5%9D%97/javascript/index.html">
+<meta property="og:site_name" content="帅气男孩Mir.Liu">
+<meta property="og:description" content="Ecmascript01 使用 window.alert()window.alert(“hello world”) 02 操作 HTML 元素 document.getElementById(“demo”)** 是使用 id 属性来查找 HTML 元素的 JavaScript 代码 。 innerHTML &#x3D; “段落已修改。”** 是用于修改元素的 HTML 内容(innerHTML)的 Java">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://up.enterdesk.com/edpic/6e/46/45/6e4645a0831844787b2fad19a21390b9.jpg">
+<meta property="article:published_time" content="2021-07-31T02:20:00.000Z">
+<meta property="article:modified_time" content="2021-07-31T16:57:35.813Z">
+<meta property="article:author" content="liuxiaodi">
+<meta property="article:tag" content="js,编程,高级语言">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://up.enterdesk.com/edpic/6e/46/45/6e4645a0831844787b2fad19a21390b9.jpg"><link rel="shortcut icon" href="/liuxiaodi01/liuxiaodi01.github.io.git/img/favicon.png"><link rel="canonical" href="https://github.com/liuxiaodi01/liuxiaodi01.github.io.git/2021/07/31/%E4%BB%A3%E7%A0%81%E5%9D%97/javascript/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/liuxiaodi01/liuxiaodi01.github.io.git/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/liuxiaodi01/liuxiaodi01.github.io.git/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'javascript',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-08-01 00:57:35'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://up.enterdesk.com/edpic/aa/49/f9/aa49f9b334ed734bc6c2fe09405ea634.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/liuxiaodi01/liuxiaodi01.github.io.git/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/liuxiaodi01/liuxiaodi01.github.io.git/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/liuxiaodi01/liuxiaodi01.github.io.git/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/liuxiaodi01/liuxiaodi01.github.io.git/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/liuxiaodi01/liuxiaodi01.github.io.git/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/liuxiaodi01/liuxiaodi01.github.io.git/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/liuxiaodi01/liuxiaodi01.github.io.git/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/liuxiaodi01/liuxiaodi01.github.io.git/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></li><li><a class="site-page child" href="/liuxiaodi01/liuxiaodi01.github.io.git/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://up.enterdesk.com/edpic/6e/46/45/6e4645a0831844787b2fad19a21390b9.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/liuxiaodi01/liuxiaodi01.github.io.git/">帅气男孩Mir.Liu</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/liuxiaodi01/liuxiaodi01.github.io.git/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/liuxiaodi01/liuxiaodi01.github.io.git/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/liuxiaodi01/liuxiaodi01.github.io.git/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/liuxiaodi01/liuxiaodi01.github.io.git/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/liuxiaodi01/liuxiaodi01.github.io.git/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></li><li><a class="site-page child" href="/liuxiaodi01/liuxiaodi01.github.io.git/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">javascript</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-07-31T02:20:00.000Z" title="发表于 2021-07-31 10:20:00">2021-07-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-07-31T16:57:35.813Z" title="更新于 2021-08-01 00:57:35">2021-08-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/liuxiaodi01/liuxiaodi01.github.io.git/categories/js/">js</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="javascript"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Ecmascript"><a href="#Ecmascript" class="headerlink" title="Ecmascript"></a>Ecmascript</h2><h4 id="01-使用-window-alert"><a href="#01-使用-window-alert" class="headerlink" title="01 使用 window.alert()"></a>01 使用 window.alert()</h4><p>window.alert(“hello world”)</p>
+<h4 id="02-操作-HTML-元素"><a href="#02-操作-HTML-元素" class="headerlink" title="02 操作 HTML 元素"></a>02 操作 HTML 元素</h4><ul>
+<li>document.getElementById(“demo”)** 是使用 id 属性来查找 HTML 元素的 JavaScript 代码 。</li>
+<li>innerHTML = “段落已修改。”** 是用于修改元素的 HTML 内容(innerHTML)的 JavaScript 代码。</li>
+</ul>
+<h4 id="03js-语法"><a href="#03js-语法" class="headerlink" title="03js 语法"></a>03js 语法</h4><ol>
+<li>骆驼式法命名规则 第一个单词以小写字母开始；第二个单词的首字母大写或每一个单词的首字母都采用大写字母</li>
+<li>字面量<ol>
+<li><strong>数字（Number）字面量</strong> 可以是整数或者是小数，或者是科学计数(e)</li>
+<li><strong>字符串（String）字面量</strong> 可以使用单引号或双引号:</li>
+<li><strong>数组（Array）字面量</strong> 定义一个数组：</li>
+<li><strong>对象（Object）字面量</strong> 定义一个对象：</li>
+<li><strong>函数（Function）字面量</strong> 定义一个函数：</li>
+</ol>
+</li>
+<li>变量</li>
+<li>在编程语言中，变量用于存储数据值。</li>
+</ol>
+<pre><code>JavaScript 使用关键字 var 来定义变量， 使用等号来为变量赋值：
+变量可以通过变量名访问。在指令式语言中，变量通常是可变的。字面量是一个恒定的值。
+</code></pre>
+<ol start="2">
+<li>变量是一个<strong>名称</strong>。字面量是一个<strong>值</strong>。var x = 5;其中 x 就是变量名,5 就是字面量,结合上述来看就懂多了</li>
+<li>操作符 (算数,比较,赋值,逻辑,条件和位运算符)</li>
+<li>语句 x = 5+6; y=x*10; 变量 x,y 值 11,10</li>
+<li>关键字 1. JavaScript 关键字用于标识要执行的操作,和其他任何编程语言一样，JavaScript 保留了关键字为自己所用 7.注释 // 和/***/内的代码 都不会执行 8.数据类型的概念 1.任何数据类型加上 string 都是 string 类型 9.大小写和字符集<br>+js 是区分大小写的 JavaScript 使用 Unicode 字符集。Unicode 覆盖了所有的字符，包含标点等字符 utf-8</li>
+</ol>
+<h4 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h4><p>if,Switch,三元表达式</p>
+<h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h4><p>for whlie() do while()<br>for 循环是王者 do while()和 while()是青铜 ,do while()会先执行一次再判断条件,while 先判断条件</p>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><pre><code>+ 冒泡 arr.solt();
++ 去重 arr.indexof()来进行 arr.filter()
++ 筛选 if判断 Array.isArray
++ 翻转 arr.resver()
++ 新增/删除 arr.push /arr.pop ,arr.unshift / arr.shift
++ 将数组转换为字符串
+    toSting(),join()
++ 将字符串转换为数组
+    string.split()
+</code></pre>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><pre><code>+ substr删除字符串多个
++ split(&quot;&quot;)分割    选择以什么作为分割符号
+</code></pre>
+<h2 id="webapi"><a href="#webapi" class="headerlink" title="webapi"></a>webapi</h2><h4 id="innerText-和-innerHTML-的区别"><a href="#innerText-和-innerHTML-的区别" class="headerlink" title="innerText 和 innerHTML 的区别"></a>innerText 和 innerHTML 的区别</h4><p>innerText 不会对标签和,内容的符号进行转换 会自动删除内部的标签和换行</p>
+<p>innerHTML 可以对字符串标签进行转换等等 保留标签和换行,我们更提倡使用这个</p>
+<h4 id="获取元素的方法"><a href="#获取元素的方法" class="headerlink" title="获取元素的方法"></a>获取元素的方法</h4><p>document.getElementById()</p>
+<p>document.getElementtagClassName</p>
+<p>document.querySelector</p>
+<p>document.querySelectorAll</p>
+<p>document.body</p>
+<p>document.documentElement</p>
+<h4 id="事件三要素"><a href="#事件三要素" class="headerlink" title="事件三要素"></a>事件三要素</h4><p>事件源,事件对象,事件处理程序</p>
+<h3 id="注册事件两种方式"><a href="#注册事件两种方式" class="headerlink" title="注册事件两种方式"></a>注册事件两种方式</h3><p>1.传统的注册事件 使用 on 方法</p>
+<p>2.现代注册方式使用 addEventListener()</p>
+<h4 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h4><p>不用在频繁设置子元素里的点击事件 直接给父元素设置来影响子元素就是事件委托</p>
+<p>事件对象的方法和属性 (e,.target)</p>
+<p>拿到页面的 x 和 y e.pageX,e.pageY</p>
+<p>可视窗口的 x 和 y e.clientX e.clientY</p>
+<p>禁止右键菜单和禁止选中文字</p>
+<p>e.preventDefault()</p>
+<h4 id="节点层级"><a href="#节点层级" class="headerlink" title="节点层级"></a>节点层级</h4><p>parentNode 父级节点</p>
+<p>父级.childNode （标准）获取子节点</p>
+<p>parentNode.children 来获取元素 只会获取元素 开发常用 parentNode.children[0]根据索引来获取节点</p>
+<p>兄弟节点 nex pre</p>
+<h3 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h3><p>node.removeChild 方法从 dom 删除一个节点，只能是父级点.removeChlid（）删除子节点的方法</p>
+<p>node.cloneNode()克隆之后也需要添加 appenChild 和 insertBefore</p>
+<p>创建节点 document.createElement(“li”)</p>
+<h4 id="this-和-e-target"><a href="#this-和-e-target" class="headerlink" title="this 和 e.target"></a>this 和 e.target</h4><p>this 就是你绑定了 ul 点击了 li 还是返回 ul</p>
+<p>e.target 就是你绑定了 ul 点击了 li 他就返回 li 的</p>
+<p>dom 核心</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">增删改查,创建,属性操作,事件操作</span><br><span class="line">创建 3种</span><br><span class="line">document.write</span><br><span class="line">document.createElement 创建了需要 渲染 父节点.appendChild()</span><br><span class="line">元素.innerHTML</span><br><span class="line">增</span><br><span class="line">1.node.appendChild()正在再父元素的末尾</span><br><span class="line">2.insertBefore()可以指定位置增加</span><br><span class="line">删</span><br><span class="line">removeChild()删除</span><br><span class="line">改</span><br><span class="line">1.修改元素属性 src , title ,href等</span><br><span class="line">修改元素内容 innerHTML innerText</span><br><span class="line">修改表单元素:value type , disble 等等</span><br><span class="line">修改元素样式 可以通过className 来进行 也可以通过style来进行</span><br><span class="line">查</span><br><span class="line">document.getElementById</span><br><span class="line">document.getElementTagClass 古老方法 不提倡使用</span><br><span class="line">document.querySelector</span><br><span class="line">document.querySelectorAll 新方法 h5 推荐使用</span><br><span class="line">获取父级节点  元素.parentNode()</span><br><span class="line">获取子级元素 元素.children()</span><br><span class="line">上级兄弟 preElement</span><br><span class="line">下级兄弟 nextElement</span><br></pre></td></tr></table></figure>
+
+<h4 id="history-对象"><a href="#history-对象" class="headerlink" title="history 对象"></a>history 对象</h4><p>history.forward()前进</p>
+<p>history.back()返回</p>
+<p>go(参数) 前进或者返回</p>
+<h4 id="navigation-对象"><a href="#navigation-对象" class="headerlink" title="navigation 对象"></a>navigation 对象</h4><p>用来判断用户进入的是 pc 端还是移动端页面</p>
+<h4 id="location-配合表单使用传递数据"><a href="#location-配合表单使用传递数据" class="headerlink" title="location 配合表单使用传递数据"></a>location 配合表单使用传递数据</h4><p>location.herf()跳转</p>
+<p>location,seach()获取?后面的参数</p>
+<p>location.host 返回主机域名</p>
+<h4 id="JS-执行机制"><a href="#JS-执行机制" class="headerlink" title="JS 执行机制"></a>JS 执行机制</h4><p>同步和异步</p>
+<p>先执行玩同步的任务再来看异步执行的任务</p>
+<p>even loop 事件循环</p>
+<p>这是个非常重要的东西</p>
+<h4 id="this-指向问题"><a href="#this-指向问题" class="headerlink" title="this 指向问题"></a>this 指向问题</h4><p>this 指向问题 一般情况下 this 的最终指向的是那个调用它的对象</p>
+<p>// 1.全局作用域或者普通函数中 this 指向全局对象 window(注意定时器里面的 this 指向 window)</p>
+<h4 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//window对象给我们提供了2个非常好用的方法-定时器</span></span><br><span class="line"><span class="built_in">setTimeout</span>();</span><br><span class="line"><span class="built_in">setInterval</span>();</span><br><span class="line"><span class="comment">//这俩者都是window的对象</span></span><br><span class="line"><span class="comment">//语法规范</span></span><br><span class="line"><span class="comment">//.window.setTimeout(调用函数,延时事件)</span></span><br><span class="line"><span class="comment">//1.这个window在调用的时候可以省略</span></span><br><span class="line"><span class="comment">//2.这个延时时间单位是毫秒,但是可以省略,如果省略默认是是0</span></span><br><span class="line"><span class="comment">//3.这个调用函数可以直接写到外面,然后把函数名写到setTimeout的调用函数里</span></span><br><span class="line"><span class="comment">//4.页面中可能有多个定时器,我们通常给定时器起个名字来识别他们</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//例如:</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">blast</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;我开始爆炸了&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> time1 = <span class="built_in">setTimeout</span>(blast, <span class="number">2000</span>);</span><br><span class="line"><span class="keyword">var</span> time2 = <span class="built_in">setTimeout</span>(blast, <span class="number">5000</span>);</span><br><span class="line"><span class="built_in">window</span>.clearTimeout(); <span class="comment">//清除定时器</span></span><br><span class="line"><span class="comment">//清除定时器必须要跟定时器的变量名,不然清除不了</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="调整窗口大小"><a href="#调整窗口大小" class="headerlink" title="调整窗口大小"></a>调整窗口大小</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&quot;resize&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.innerWidth;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="offset-与-style-的区别"><a href="#offset-与-style-的区别" class="headerlink" title="offset 与 style 的区别"></a>offset 与 style 的区别</h4><p>offset 只能读不能操作改属性 获得任意样式表中的值 打印出来是数值,不跟单位 包含 padding 和 border 的</p>
+<p>style 可以读写可以获得也可以赋值 只能获得行内样式表里的元素大小 打印出来是带有单位的字符串</p>
+<p>不包含 padding 和 border</p>
+<h4 id="client-系列"><a href="#client-系列" class="headerlink" title="client 系列"></a>client 系列</h4><p>不含边框的</p>
+<p>clientWidth 和 offsetwidth 最大区别计算 clientWidth 是不包含边框的</p>
+<h4 id="mouseenter-和-mouseover-的区别"><a href="#mouseenter-和-mouseover-的区别" class="headerlink" title="mouseenter 和 mouseover 的区别"></a>mouseenter 和 mouseover 的区别</h4><p>mouseenter 经过自身和子盒子都会触发 (冒泡)</p>
+<p>mouseover 只会触发经过自身 (不冒泡)</p>
+<h4 id="offsetParent-和-parentNode-的区别"><a href="#offsetParent-和-parentNode-的区别" class="headerlink" title="offsetParent 和 parentNode 的区别"></a>offsetParent 和 parentNode 的区别</h4><p>offsetParent 的元素父亲必须是带有定位的盒子</p>
+<p>position:static 用这个定位的父元素的盒子获取不到</p>
+<p>parentNode 返回最近的父元素</p>
+<h4 id="动画-横向缓动动画-动画"><a href="#动画-横向缓动动画-动画" class="headerlink" title="动画(横向缓动动画)动画)"></a>动画(横向缓动动画)动画)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//动画(横向缓动动画)</span></span><br><span class="line"><span class="comment">//target目标位置</span></span><br><span class="line"><span class="comment">//interval间隔事件</span></span><br><span class="line"><span class="comment">//callback回调函数(可不填)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">animate</span>(<span class="params">obj, target, interval, callback</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//清除定时器</span></span><br><span class="line">  <span class="built_in">clearInterval</span>(obj.timer);</span><br><span class="line">  obj.timer = <span class="built_in">setInterval</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//步长</span></span><br><span class="line">    <span class="keyword">var</span> step = (target - obj.offsetLeft) / <span class="number">10</span>;</span><br><span class="line">    step = step &gt; <span class="number">0</span> ? <span class="built_in">Math</span>.ceil(step) : <span class="built_in">Math</span>.floor(step);</span><br><span class="line">    <span class="comment">//到目标位置停止</span></span><br><span class="line">    <span class="keyword">if</span> (obj.offsetLeft == target) &#123;</span><br><span class="line">      <span class="built_in">clearInterval</span>(obj.timer);</span><br><span class="line">      callback &amp;&amp; callback();</span><br><span class="line">    &#125;</span><br><span class="line">    obj.style.left = obj.offsetLeft + step + <span class="string">&quot;px&quot;</span>;</span><br><span class="line">  &#125;, interval);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="动画-window-竖向缓动动画"><a href="#动画-window-竖向缓动动画" class="headerlink" title="动画(window 竖向缓动动画)"></a>动画(window 竖向缓动动画)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//动画(window竖向缓动动画)</span></span><br><span class="line"><span class="comment">//target目标位置</span></span><br><span class="line"><span class="comment">//interval间隔事件</span></span><br><span class="line"><span class="comment">//callback回调函数(可不填)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">animate</span>(<span class="params">obj, target, interval, callback</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//清除定时器</span></span><br><span class="line">  <span class="built_in">clearInterval</span>(obj.timer);</span><br><span class="line">  obj.timer = <span class="built_in">setInterval</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//步长</span></span><br><span class="line">    <span class="keyword">var</span> step = (target - <span class="built_in">window</span>.pageYOffset) / <span class="number">10</span>;</span><br><span class="line">    step = step &gt; <span class="number">0</span> ? <span class="built_in">Math</span>.ceil(step) : <span class="built_in">Math</span>.floor(step);</span><br><span class="line">    <span class="comment">//到目标位置停止</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.pageYOffset == target) &#123;</span><br><span class="line">      <span class="built_in">clearInterval</span>(obj.timer);</span><br><span class="line">      callback &amp;&amp; callback();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">window</span>.scroll(<span class="number">0</span>, <span class="built_in">window</span>.pageYOffset + step);</span><br><span class="line">  &#125;, interval);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="本地存储-window-localStorage-和-sessionStorage"><a href="#本地存储-window-localStorage-和-sessionStorage" class="headerlink" title="本地存储 window.localStorage 和 sessionStorage"></a>本地存储 window.localStorage 和 sessionStorage</h4><p>存储数据</p>
+<p>sessionStorage.setItem(“uname”,val)</p>
+<p>获取数据</p>
+<p>sessionStorage.getItem(“uame”)</p>
+<p>删除数据</p>
+<p>sessionStorage.removeItem(“uame”)</p>
+<p>删除所有数据</p>
+<p>sessionStorage.clear()</p>
+<p>localStorage 的不同之处</p>
+<p>localStorage 生命周期永久生效，除非手动删除 否则关闭页面也会存在</p>
+<h2 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h2><p>[TOC]</p>
+<h1 id="day01"><a href="#day01" class="headerlink" title="day01"></a>day01</h1><h2 id="面向对象编程介绍"><a href="#面向对象编程介绍" class="headerlink" title="面向对象编程介绍"></a>面向对象编程介绍</h2><h3 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程:"></a>面向过程:</h3><ul>
+<li>优点:性能高,性能比面对对象高,适合硬件联系很紧密的东西,</li>
+<li>缺点:没有面向对象易维护,易复用,易扩展</li>
+<li>eg:单片机</li>
+</ul>
+<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象:"></a>面向对象:</h3><ul>
+<li>优点:易扩展,易维护,易复用,代码具有灵活,可复用,容易维护和开发,适合大型开发项目</li>
+<li>缺点:没有面向过程性能高</li>
+<li>特点:封装性,继承性,多态性</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>面向对象和面向过程都是编程思想</li>
+<li>面向过程是分析出解决问题所需要的步骤,然后用函数一步一步实现. (c++)</li>
+<li>面向对象把事物分析成一个个对象,利用对象功能来划分功能(Java)</li>
+<li>JS 既可以面对对象编程也可以面向过程编程.</li>
+</ul>
+<h2 id="类和对象的区别"><a href="#类和对象的区别" class="headerlink" title="类和对象的区别"></a><strong>类和对象的区别</strong></h2><ul>
+<li>类(class):类抽象了对象的公共部分,它泛指一大类 例如:苹果 明星</li>
+<li>对象:现实中万物皆对象,对象是一个具体的事物,看得见摸得找 例如 手机的属性 手机屏幕多大 CPU 手机的方法 打游戏 看视频</li>
+</ul>
+<h2 id="如何创建类和对象"><a href="#如何创建类和对象" class="headerlink" title="如何创建类和对象"></a>如何创建类和对象</h2><p><img src="C:\有道云\weixinobU7Vjgr9WvTQ8rXw2kxyRhDl9Tc\ef3f566a6d154d3794755d59c5eae525\4dda46d34abd44a3af81d09f111bfd2e.jpg" alt="img"></p>
+<ul>
+<li>```js<br>//创建Star类<br>class Star {<br>  //构造器<br>  constructor(uname) {<pre><code>this.name = uname;
+</code></pre>
+  }<br>  init() {<pre><code>log(&quot;我是方法&quot;);
+</code></pre>
+  }<br>}<br>var ldh = new Star(); //实例化<br>ldh.init(); //通过实例化对象调用<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 类的继承</span><br><span class="line"></span><br><span class="line">```js</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      /* 父类 */</span><br><span class="line">      class Fater &#123;</span><br><span class="line">        constructor(name, age) &#123;</span><br><span class="line">          this.name = name;</span><br><span class="line">          this.age = age;</span><br><span class="line">        &#125;</span><br><span class="line">        sing() &#123;</span><br><span class="line">          console.log(this.name + &quot;wo是父亲&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      /* 子类继承父类 */</span><br><span class="line">      class Son extends Fater &#123;</span><br><span class="line">        // constructor(name, age) &#123;</span><br><span class="line">        //   super(name, age);</span><br><span class="line">        // &#125;</span><br><span class="line">        sing() &#123;</span><br><span class="line">          super.sing();</span><br><span class="line">          console.log(&quot;我是子类方法&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      new Fater(&quot;父亲&quot;, 50);</span><br><span class="line">      var son = new Son(&quot;小明&quot;, 18);</span><br><span class="line">      console.log(son);</span><br><span class="line">      son.sing(&quot;花海&quot;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><img src="C:\有道云\weixinobU7Vjgr9WvTQ8rXw2kxyRhDl9Tc\b96dadea81f14a559396d14615fe13a0\47a35b32a2604714960dd5f294b79038.jpg" alt="img"></p>
+<ul>
+<li>必须使用 super()函数才能调用父类的构造函数(x,y)</li>
+<li>extends 继承</li>
+</ul>
+<p><img src="C:\有道云\weixinobU7Vjgr9WvTQ8rXw2kxyRhDl9Tc\e60ae0ffdb594df9a460920b49ecd4d8\f5600206b0f944abb66bd283b321472e.jpg" alt="img"></p>
+<h1 id="day02"><a href="#day02" class="headerlink" title="day02"></a>day02</h1><h2 id="什么是-prototype"><a href="#什么是-prototype" class="headerlink" title="什么是 prototype"></a>什么是 prototype</h2><ul>
+<li>原型是一个对象,每个构造函数都有内置的原型对象</li>
+<li>每个构造函数都能实现方法共享</li>
+</ul>
+<h2 id="构造函数-实例-原型对象三者之间的关系"><a href="#构造函数-实例-原型对象三者之间的关系" class="headerlink" title="构造函数,实例,原型对象三者之间的关系"></a>构造函数,实例,原型对象三者之间的关系</h2><p><img src="C:\有道云\weixinobU7Vjgr9WvTQ8rXw2kxyRhDl9Tc\d0b1293a7de542e4b51f2e425650c850\70365c8b42e64d51b4d4c5596d9e4418.jpg" alt="img"></p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p><img src="C:\有道云\weixinobU7Vjgr9WvTQ8rXw2kxyRhDl9Tc\5982a023b56e476baba2742e794a03e2\33326f1564a546a8a3d84f29f3420c8a.jpg" alt="img"></p>
+<h2 id="JS-新增的方法遍历数组-forEach"><a href="#JS-新增的方法遍历数组-forEach" class="headerlink" title="JS 新增的方法遍历数组 forEach"></a>JS 新增的方法遍历数组 forEach</h2><ul>
+<li>参数 value index arr</li>
+<li>value 数组中正在处理的当前数组</li>
+<li>index 数组中正在处理的当前数组的索引</li>
+<li>arr foreach 正在处理的数组</li>
+</ul>
+<h3 id="array-filter"><a href="#array-filter" class="headerlink" title="array.filter"></a>array.filter</h3><h3 id="array-filter-function-currentValue-index-arr-thisValue"><a href="#array-filter-function-currentValue-index-arr-thisValue" class="headerlink" title="array.filter(function(currentValue,index,arr), thisValue)"></a>array.filter(function(currentValue,index,arr), thisValue)</h3><p><img src="C:\有道云\weixinobU7Vjgr9WvTQ8rXw2kxyRhDl9Tc\ccfc19a611bd464ca089bf06c922a01e\13ac526f35f24f0f9e49ba6039011665.jpg" alt="img"></p>
+<p><img src="C:\有道云\weixinobU7Vjgr9WvTQ8rXw2kxyRhDl9Tc\b44a6b05ee1045cfb68ec6443a5f0bcb\9c9f2cef89134b91b1c4b4a67b70b3af.jpg" alt="img"></p>
+<h3 id="arr-some-和-arr-forEach-的区别"><a href="#arr-some-和-arr-forEach-的区别" class="headerlink" title="arr.some 和 arr.forEach 的区别"></a>arr.some 和 arr.forEach 的区别</h3><ul>
+<li>forEach 里判断如果加了 return true 还会进行迭代</li>
+<li>some 里如果加了判断 return true 就会终止执行了,迭代效率更高</li>
+</ul>
+<h3 id="清除两边的空格"><a href="#清除两边的空格" class="headerlink" title="清除两边的空格"></a>清除两边的空格</h3><ul>
+<li>不会清除中间的,只会清除两边的空格</li>
+<li>trim()</li>
+</ul>
+<h1 id="day03"><a href="#day03" class="headerlink" title="day03"></a>day03</h1><h2 id="对象新增的方法"><a href="#对象新增的方法" class="headerlink" title="对象新增的方法"></a>对象新增的方法</h2><ol>
+<li><p>Object.Keys(obj)用于获取对象自身所有的属性</p>
+<ul>
+<li><p>效果类似于 for in</p>
+</li>
+<li><p>for in 返回一个由属性名组成的数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;xu&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">Object</span>.Keys(obj); <span class="comment">//返回的是一个数组,需要定义一个变量来接收</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="built_in">Object</span>.Keys(obj);</span><br><span class="line">arr; <span class="comment">// [&quot;name&quot;,&quot;age&quot;]</span></span><br><span class="line"><span class="comment">//使用arr</span></span><br><span class="line">arr.foreach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">  log(value);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//可以遍历</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>修改属性和添加属性</p>
+<ul>
+<li><p>obj,name = “张三” 修改属性, obj,sing = “唱歌” 添加属性 (以前方法)</p>
+</li>
+<li><p>现在方法</p>
+<p><img src="C:\有道云\weixinobU7Vjgr9WvTQ8rXw2kxyRhDl9Tc\9f63115bc367457ba225025792ead109\b9028a89531d494191c547dae78d25ad.jpg" alt="img"></p>
+<ul>
+<li>第三个参数最难</li>
+<li>以{}形式 参数 value writetable enumerable configurable</li>
+<li>value //这个属性是修改或者添加值,也就是属性名等于的值</li>
+<li>writetable : true/false //如果为 true 是允许修改对象里的产生,false 是不允许修改<img src="C:\有道云\weixinobU7Vjgr9WvTQ8rXw2kxyRhDl9Tc\529df6ed8c094c13aab63fddb493ff88\c226fb56a37a4eb8b06ecd717329c3de.jpg" alt="img"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>改变函数的三种方法</p>
+<ul>
+<li><p>call(thisarr , a,b) apply(thisarr,[“a”,”b”]) bind(this,a,b)</p>
+<p><img src="C:\有道云\weixinobU7Vjgr9WvTQ8rXw2kxyRhDl9Tc\c758a7bed26f453e99f0ffd4a911d47b\2d76d7a91a9345b0a4f1241568986d41.jpg" alt="img"></p>
+<p><img src="C:\有道云\weixinobU7Vjgr9WvTQ8rXw2kxyRhDl9Tc\80095a1c41b441ce9f1052df0a0d78fd\f9cdc4ff41f842d78e222a1d56e61c58.jpg" alt="img"></p>
+<p><img src="C:\有道云\weixinobU7Vjgr9WvTQ8rXw2kxyRhDl9Tc\b0f8fddc5d8c4218a55712e9f0e01619\ebb159d5a3f541fa87191baf87314954.jpg" alt="img"></p>
+<ul>
+<li>bind()类似于第一个 call()</li>
+<li>bind()函数不会调用函数,会改变原 this 的只会的得到新的函数</li>
+</ul>
+<p><img src="C:\有道云\weixinobU7Vjgr9WvTQ8rXw2kxyRhDl9Tc\9e1722d81c82433a868e0b7814787176\bb363cf609ae47fcb14e78b4e5d8f8bf.jpg" alt="img"></p>
+<p>优化后的代码</p>
+<p><img src="C:\有道云\weixinobU7Vjgr9WvTQ8rXw2kxyRhDl9Tc\643e97b8ccb0473a8f3c0428fc3966d0\68aaabf89dfb42eead0c9872ca207b24.jpg" alt="img"></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="call-apply-bind-总结"><a href="#call-apply-bind-总结" class="headerlink" title="call() apply() bind()总结"></a>call() apply() bind()总结</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### 相同点</span><br></pre></td></tr></table></figure>
+
+<p>​ 都可以改变函数内部的 this 指向</p>
+<h3 id="区别点"><a href="#区别点" class="headerlink" title="区别点"></a>区别点</h3><ol>
+<li>call 和 apply 会调用函数,并且改变函数内部的 this.</li>
+<li>call 和 apply 传递的参数不一样, call 传递参数 aru1, aru2 形式 apply 必须以数组形式[arg]</li>
+<li>bind 不会调用函数,可以改变函数内部 this 的指向</li>
+</ol>
+<h3 id="主要应用场景"><a href="#主要应用场景" class="headerlink" title="主要应用场景"></a>主要应用场景</h3><ol>
+<li>call 经常做继承</li>
+<li>apply 经常跟数组有关系,比如借助与数学对象实现数组最大值和最小值</li>
+<li>bind 不调用函数,但是还想改变 this 指向.比如改变定时器内部 this 的指向</li>
+</ol>
+<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><h3 id="什么是严格模式"><a href="#什么是严格模式" class="headerlink" title="什么是严格模式?"></a>什么是严格模式?</h3><ul>
+<li><p>JavaScript 除了提供正常的模式外,还提供了严格模式(strict mode).ES5 的严格模式采用了具有限制性</p>
+</li>
+<li><p>JavaScript 变体的一种方式,即在严格的条件下运行 JS 代码</p>
+<p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\1625971635505.png" alt="1625971635505"></p>
+</li>
+</ul>
+<h3 id="开启严格模式"><a href="#开启严格模式" class="headerlink" title="开启严格模式"></a>开启严格模式</h3><ul>
+<li><p>同样的，要给某个函数开启严格模式，得把 <code>&quot;use strict&quot;;</code> (或 <code>&#39;use strict&#39;; </code>)声明<em>一字不漏地</em>放在函数体所有语句之前</p>
+<p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\1625971820599.png" alt="1625971820599"></p>
+<p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\1625971849524.png" alt="1625971849524"></p>
+<p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\1625972019265.png" alt="1625972019265"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 为整个JavaScript脚本开启严格模式 --&gt;</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"><span class="meta"></span></span></span></span><br><span class="line"><span class="meta"><span class="javascript"><span class="xml">    &quot;use strict&quot;</span>;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">  &lt;!-- 为fn个函数开启严格模式 --&gt;</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"><span class="meta">      &quot;use strict&quot;</span>;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">      <span class="comment">//   里面的还是按照普通函数模式执行</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="严格模式下-this-指向问题"><a href="#严格模式下-this-指向问题" class="headerlink" title="严格模式下 this 指向问题"></a>严格模式下 this 指向问题</h3><ol>
+<li>以前在全局作用域函数中的 this 还是指向 window</li>
+<li>严格模式下全局作用域中的 this 是 undefined</li>
+<li>以前构造函数式不加 new 也可以调用,当做普通函数,this 指向全局对象</li>
+<li>严格模式下,如果 构造函数不加 new 调用,this 指向 undefined 如果给它赋值会报错</li>
+<li>new 实例化的构造函数指向创建的对象实例</li>
+<li>定时器 this 还是指向 window</li>
+<li>事件,对象还是指向调用者</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="comment">/* 在严格模式下,必须先声明再使用 */</span></span><br><span class="line"><span class="comment">/*  num = 10 */</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br><span class="line"><span class="comment">// console.log(this); this指向 window</span></span><br><span class="line"><span class="comment">/* 在严格模式下我们不能随意删除已经声明好的变量 */</span></span><br><span class="line"><span class="comment">// delete num;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 严格模式下全局作用域中函数中的this是undefined */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br><span class="line"><span class="comment">/* 定时器的this 还是指向 window */</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">&#125;, <span class="number">2000</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数的变化"><a href="#函数的变化" class="headerlink" title="函数的变化"></a>函数的变化</h3><ol>
+<li><p>函数不能有重名的参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="comment">// 不开启严格模式  fn =&gt; 4 相当于 a = 1;然后又将a = 2; a+a = 4</span></span><br><span class="line"><span class="comment">// 开启严格模式 报错 不能写2个相同的形参</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a, a</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a + a);</span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>函数必须声明在顶层.新版本的 JavaScript 会引入”块级作用域”(ES6 已引入).为了与新版本接轨,不允许在非函数的代码内声明还是</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;&#125; <span class="comment">// !!! 语法错误</span></span><br><span class="line">  f();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;&#125; <span class="comment">// !!! 语法错误</span></span><br><span class="line">  f2();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 合法</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">eit</span>(<span class="params"></span>) </span>&#123;&#125; <span class="comment">// 同样合法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​ <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode</a> mdn 文档</p>
+</li>
+</ol>
+<h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\1625975346320.png" alt="1625975346320"></p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><ul>
+<li>闭包指有权访问另一个函数作用域中变量的函数.. 简单理解就是,一个作用域可以访问另外一个函数内部的局部变量</li>
+<li>作用 衍生了变量的范围</li>
+</ul>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><ul>
+<li><p>函数内部自己调用自己 那么这个函数就叫做递归函数</p>
+</li>
+<li><p>```js<br>function fn() {<br>  fn();<br>}<br>fn();</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 递归函数的作用和循环效果一样</span><br><span class="line"></span><br><span class="line">- 由于递归很容易发生&quot;栈溢出&quot;错误(Stack Overflow),所有必须要加退出条件 return</span><br><span class="line"></span><br><span class="line">- 利用递归求阶乘</span><br><span class="line"></span><br><span class="line">  - ```js</span><br><span class="line">    function fn(n) &#123;</span><br><span class="line">      if (n == 1) &#123;</span><br><span class="line">        return 1;</span><br><span class="line">      &#125;</span><br><span class="line">      return n * fn(n - 1);</span><br><span class="line">    &#125;</span><br><span class="line">    fn(3);</span><br><span class="line">    console.log(fn(3));</span><br></pre></td></tr></table></figure>
+
+<p>-</p>
+</li>
+</ul>
+<h2 id="浅拷贝和深拷贝"><a href="#浅拷贝和深拷贝" class="headerlink" title="浅拷贝和深拷贝"></a>浅拷贝和深拷贝</h2><ul>
+<li>浅拷贝只是拷贝一层,更深层次对象级别的只拷贝引用</li>
+<li>浅拷贝语法糖 Object.assign(o,obj) es6 新增的方法可以浅拷贝</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//浅拷贝</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&quot;张珊&quot;</span>,</span><br><span class="line">    <span class="attr">age</span>:<span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> o = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> obj)&#123;</span><br><span class="line">    o[k] =      name: <span class="string">&quot;张珊&quot;</span>,</span><br><span class="line">        <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">        <span class="attr">mes</span>: &#123;</span><br><span class="line">          <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;;</span><br><span class="line">      <span class="keyword">var</span> o = &#123;&#125;;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> obj) &#123;</span><br><span class="line">        o[k] = obj[k];</span><br><span class="line">      &#125;</span><br><span class="line">      o.name = <span class="string">&quot;李四&quot;</span>;</span><br><span class="line">      <span class="comment">// 这里的 mes.age = 20 把obj的也改变了</span></span><br><span class="line">      o.mes.age = <span class="string">&quot;20&quot;</span>;</span><br><span class="line">      <span class="built_in">console</span>.log(obj);</span><br><span class="line">      <span class="built_in">console</span>.log(o);obj[k]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>深拷贝拷贝多层,每一级别的数据都会拷贝</li>
+<li><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\1625999326707.png" alt="1625999326707"></li>
+</ul>
+<h1 id="day04"><a href="#day04" class="headerlink" title="day04"></a>day04</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## 正则表达式</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>什么是正则表达式</p>
+<p><img src="C:\Users\86186\AppData\Roaming\Typora\typora-user-images\1626005884502.png" alt="1626005884502"></p>
+</li>
+<li><p>正则表达式的特点</p>
+<ol>
+<li>灵活性,逻辑性和功能性非常的强</li>
+<li>可以迅速地用极简单的发送达到字符串的复杂控制</li>
+<li>对于刚接触的人来说,比较晦涩难懂</li>
+<li>实际开发,一般都是直接复制写好的正则表达式 , 但是要求会使用正则表达式并根据实际情况来修改正则表达式</li>
+</ol>
+</li>
+</ol>
+<h3 id="创建正则表达式"><a href="#创建正则表达式" class="headerlink" title="创建正则表达式"></a>创建正则表达式</h3><ul>
+<li>正则表达式（ Regular Expression ）是用于匹配字符串中字符组合的模式。在 JavaScript 中，正则表达式也是对象。</li>
+<li>特点:<ul>
+<li>灵活性、逻辑性和功能性非常的强</li>
+<li>可以迅速地用极简单的方式达到字符串的复杂控制</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>正则表达式的两种创建方式<ol>
+<li>通过 new 关键字来创建 var regExp = new RegExp(/123/)</li>
+<li>通过字面量的方式来创建 // var rg = /123/</li>
+</ol>
+</li>
+<li>检测<ul>
+<li>test 方法用来检测字符串是否符合正则表达式要求的规范</li>
+</ul>
+</li>
+</ol>
+<h3 id="正则表达式的特殊字符"><a href="#正则表达式的特殊字符" class="headerlink" title="正则表达式的特殊字符"></a>正则表达式的特殊字符</h3><ul>
+<li>^以紧挨^开头的字符</li>
+<li>￥以紧挨着$结尾的字符</li>
+<li>^和$同时出现表示严格匹配</li>
+</ul>
+<h1 id="day-05"><a href="#day-05" class="headerlink" title="day 05"></a>day 05</h1><h2 id="ES6-语法"><a href="#ES6-语法" class="headerlink" title="ES6 语法"></a>ES6 语法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">### 目标</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>能够说出使用 let 关键字声明变量的特点</li>
+<li>能够使用解构赋值从数组中提取值</li>
+<li>能够说出箭头函数拥有的特性</li>
+<li>能够使用剩余参数接收剩余的函数参数</li>
+<li>能够使用拓展运算符拆分数组</li>
+<li>能够说出模板字符串拥有的特性</li>
+</ul>
+<h3 id="ES6-相关概念"><a href="#ES6-相关概念" class="headerlink" title="ES6 相关概念"></a>ES6 相关概念</h3><table>
+<thead>
+<tr>
+<th>var</th>
+<th>let</th>
+<th>const</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>变量提升</td>
+<td>变量不能提升</td>
+<td>变量不能提升</td>
+</tr>
+<tr>
+<td>没用块级作用域</td>
+<td>块级作用域</td>
+<td>块级作用域</td>
+</tr>
+<tr>
+<td>可以修改值</td>
+<td>可以修改值</td>
+<td>不可以修改值</td>
+</tr>
+</tbody></table>
+<p>箭头函数</p>
+<ul>
+<li>（）=&gt;{}</li>
+<li>只有一个参数可以不写小括号，直邮一个返回值可以不写大括号</li>
+<li>箭头函数没有绑定 this，this 指向是上下文的 this</li>
+</ul>
+<p>解构赋值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 数组 */</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> [arr01, rr02, arr03, arr04] = arr;</span><br><span class="line"><span class="built_in">console</span>.log(arr01);</span><br><span class="line"><span class="comment">/* 对象两种 */</span></span><br><span class="line"><span class="comment">/* 第一种 */</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;张山&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">18</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> &#123; age &#125; = obj;</span><br><span class="line"><span class="built_in">console</span>.log(age);</span><br><span class="line"><span class="comment">/* 第二种  起别名*/</span></span><br><span class="line"><span class="keyword">var</span> &#123; <span class="attr">age</span>: data &#125; = obj;</span><br><span class="line"><span class="built_in">console</span>.log(data);</span><br></pre></td></tr></table></figure>
+
+<p>剩余参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = <span class="function">(<span class="params">...arg</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line">  arg.forEach(<span class="function">(<span class="params">item</span>) =&gt;</span> (sum += item));</span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(sum(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>));</span><br></pre></td></tr></table></figure>
+
+<p>展开运算符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s1 = [<span class="string">&quot;为寒夜上王者&quot;</span>, <span class="string">&quot;天不生我&quot;</span>];</span><br><span class="line"><span class="keyword">let</span> s2 = [<span class="string">&quot;赵飞虹&quot;</span>, <span class="string">&quot;龙山&quot;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s3 = s1.concat(s2); <span class="comment">/* 连接 */</span></span><br><span class="line"><span class="built_in">console</span>.log(...s3); <span class="comment">//将数组展开</span></span><br></pre></td></tr></table></figure>
+
+<p>find 方法查找符合条件的 返回一个新的对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;孙膑&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br><span class="line"><span class="keyword">var</span> s1 = arr.find(<span class="function">(<span class="params">item</span>) =&gt;</span> item.id === <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(s1);</span><br></pre></td></tr></table></figure>
+
+<p>findInde() 类似于 indexof 返回索引位置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;这种&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;这种s&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;这种d&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">4</span>,</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;这种e&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br><span class="line"><span class="keyword">let</span> arg = obj.findIndex(<span class="function">(<span class="params">itme</span>) =&gt;</span> itme.id === <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arg);</span><br></pre></td></tr></table></figure>
+
+<p>new set() 只用记住可以去重 （一行去重）</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">liuxiaodi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://github.com/liuxiaodi01/liuxiaodi01.github.io.git/2021/07/31/%E4%BB%A3%E7%A0%81%E5%9D%97/javascript/">https://github.com/liuxiaodi01/liuxiaodi01.github.io.git/2021/07/31/%E4%BB%A3%E7%A0%81%E5%9D%97/javascript/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://github.com/liuxiaodi01/liuxiaodi01.github.io.git" target="_blank">帅气男孩Mir.Liu</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/liuxiaodi01/liuxiaodi01.github.io.git/tags/js-%E7%BC%96%E7%A8%8B-%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80/">js,编程,高级语言</a></div><div class="post_share"><div class="social-share" data-image="https://up.enterdesk.com/edpic/6e/46/45/6e4645a0831844787b2fad19a21390b9.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/liuxiaodi01/liuxiaodi01.github.io.git/2021/07/31/%E4%BB%A3%E7%A0%81%E5%9D%97/jQuery/"><img class="prev-cover" src="https://up.enterdesk.com/edpic/83/43/a4/8343a401fedc2bb6fb523545012bad6c.jpg" onerror="onerror=null;src='/liuxiaodi01/liuxiaodi01.github.io.git/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">jQuery</div></div></a></div><div class="next-post pull-right"><a href="/liuxiaodi01/liuxiaodi01.github.io.git/2021/07/31/%E4%BB%A3%E7%A0%81%E5%9D%97/html/"><img class="next-cover" src="https://up.enterdesk.com/edpic/33/32/14/3332149cf3a1431e79b062fabb5eb226.jpg" onerror="onerror=null;src='/liuxiaodi01/liuxiaodi01.github.io.git/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">html+css</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://up.enterdesk.com/edpic/aa/49/f9/aa49f9b334ed734bc6c2fe09405ea634.jpg" onerror="this.onerror=null;this.src='/liuxiaodi01/liuxiaodi01.github.io.git/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">liuxiaodi</div><div class="author-info__description">阿迪的博客,欢迎访问</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/liuxiaodi01/liuxiaodi01.github.io.git/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/liuxiaodi01/liuxiaodi01.github.io.git/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="card-info-data-item is-center"><a href="/liuxiaodi01/liuxiaodi01.github.io.git/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" href="https://github.com/liuxiaodi01.com"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/liuxiaodi01" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:36njuna9ijo@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/liuxiaodi01/liuxiaodi01.github.io.git/195815052@qq.com" target="_blank" title="QQ邮箱"><i class="fab fa-algolia"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ecmascript"><span class="toc-number">1.</span> <span class="toc-text">Ecmascript</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#01-%E4%BD%BF%E7%94%A8-window-alert"><span class="toc-number">1.0.1.</span> <span class="toc-text">01 使用 window.alert()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#02-%E6%93%8D%E4%BD%9C-HTML-%E5%85%83%E7%B4%A0"><span class="toc-number">1.0.2.</span> <span class="toc-text">02 操作 HTML 元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#03js-%E8%AF%AD%E6%B3%95"><span class="toc-number">1.0.3.</span> <span class="toc-text">03js 语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">1.0.4.</span> <span class="toc-text">流程控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.0.5.</span> <span class="toc-text">循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">1.0.6.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.0.7.</span> <span class="toc-text">字符串</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webapi"><span class="toc-number">2.</span> <span class="toc-text">webapi</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#innerText-%E5%92%8C-innerHTML-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.0.1.</span> <span class="toc-text">innerText 和 innerHTML 的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">2.0.2.</span> <span class="toc-text">获取元素的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="toc-number">2.0.3.</span> <span class="toc-text">事件三要素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E4%BA%8B%E4%BB%B6%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text">注册事件两种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98"><span class="toc-number">2.1.1.</span> <span class="toc-text">事件委托</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E5%B1%82%E7%BA%A7"><span class="toc-number">2.1.2.</span> <span class="toc-text">节点层级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="toc-number">2.2.</span> <span class="toc-text">节点操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#this-%E5%92%8C-e-target"><span class="toc-number">2.2.1.</span> <span class="toc-text">this 和 e.target</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#history-%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.2.2.</span> <span class="toc-text">history 对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#navigation-%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.2.3.</span> <span class="toc-text">navigation 对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#location-%E9%85%8D%E5%90%88%E8%A1%A8%E5%8D%95%E4%BD%BF%E7%94%A8%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE"><span class="toc-number">2.2.4.</span> <span class="toc-text">location 配合表单使用传递数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JS-%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-number">2.2.5.</span> <span class="toc-text">JS 执行机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#this-%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98"><span class="toc-number">2.2.6.</span> <span class="toc-text">this 指向问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-number">2.2.7.</span> <span class="toc-text">定时器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E6%95%B4%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F"><span class="toc-number">2.2.8.</span> <span class="toc-text">调整窗口大小</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#offset-%E4%B8%8E-style-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.2.9.</span> <span class="toc-text">offset 与 style 的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#client-%E7%B3%BB%E5%88%97"><span class="toc-number">2.2.10.</span> <span class="toc-text">client 系列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mouseenter-%E5%92%8C-mouseover-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.2.11.</span> <span class="toc-text">mouseenter 和 mouseover 的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#offsetParent-%E5%92%8C-parentNode-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.2.12.</span> <span class="toc-text">offsetParent 和 parentNode 的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB-%E6%A8%AA%E5%90%91%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB-%E5%8A%A8%E7%94%BB"><span class="toc-number">2.2.13.</span> <span class="toc-text">动画(横向缓动动画)动画)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB-window-%E7%AB%96%E5%90%91%E7%BC%93%E5%8A%A8%E5%8A%A8%E7%94%BB"><span class="toc-number">2.2.14.</span> <span class="toc-text">动画(window 竖向缓动动画)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8-window-localStorage-%E5%92%8C-sessionStorage"><span class="toc-number">2.2.15.</span> <span class="toc-text">本地存储 window.localStorage 和 sessionStorage</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7"><span class="toc-number">3.</span> <span class="toc-text">高级</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day01"><span class="toc-number"></span> <span class="toc-text">day01</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">面向对象编程介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">面向过程:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.</span> <span class="toc-text">面向对象:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">类和对象的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="toc-number">4.</span> <span class="toc-text">如何创建类和对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day02"><span class="toc-number"></span> <span class="toc-text">day02</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-prototype"><span class="toc-number">1.</span> <span class="toc-text">什么是 prototype</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0-%E5%AE%9E%E4%BE%8B-%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E4%B8%89%E8%80%85%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.</span> <span class="toc-text">构造函数,实例,原型对象三者之间的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-number">3.</span> <span class="toc-text">原型链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS-%E6%96%B0%E5%A2%9E%E7%9A%84%E6%96%B9%E6%B3%95%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84-forEach"><span class="toc-number">4.</span> <span class="toc-text">JS 新增的方法遍历数组 forEach</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#array-filter"><span class="toc-number">4.1.</span> <span class="toc-text">array.filter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#array-filter-function-currentValue-index-arr-thisValue"><span class="toc-number">4.2.</span> <span class="toc-text">array.filter(function(currentValue,index,arr), thisValue)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#arr-some-%E5%92%8C-arr-forEach-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.3.</span> <span class="toc-text">arr.some 和 arr.forEach 的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E4%B8%A4%E8%BE%B9%E7%9A%84%E7%A9%BA%E6%A0%BC"><span class="toc-number">4.4.</span> <span class="toc-text">清除两边的空格</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day03"><span class="toc-number"></span> <span class="toc-text">day03</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%96%B0%E5%A2%9E%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">对象新增的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#call-apply-bind-%E6%80%BB%E7%BB%93"><span class="toc-number">2.</span> <span class="toc-text">call() apply() bind()总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB%E7%82%B9"><span class="toc-number">2.1.</span> <span class="toc-text">区别点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">2.2.</span> <span class="toc-text">主要应用场景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">严格模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.1.</span> <span class="toc-text">什么是严格模式?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">开启严格模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E4%B8%8B-this-%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98"><span class="toc-number">3.3.</span> <span class="toc-text">严格模式下 this 指向问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%98%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text">函数的变化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text">高阶函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-number">5.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E5%BD%92"><span class="toc-number">6.</span> <span class="toc-text">递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D"><span class="toc-number">7.</span> <span class="toc-text">浅拷贝和深拷贝</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day04"><span class="toc-number"></span> <span class="toc-text">day04</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">0.1.</span> <span class="toc-text">创建正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="toc-number">0.2.</span> <span class="toc-text">正则表达式的特殊字符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day-05"><span class="toc-number"></span> <span class="toc-text">day 05</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6-%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">ES6 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6-%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">ES6 相关概念</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/liuxiaodi01/liuxiaodi01.github.io.git/2021/08/01/%E4%BB%A3%E7%A0%81%E5%9D%97/node_day03/" title="node.js_day03"><img src="https://up.enterdesk.com/edpic/a2/95/8a/a2958ad7018e6dd15855f564b9d42498.jpg" onerror="this.onerror=null;this.src='/liuxiaodi01/liuxiaodi01.github.io.git/img/404.jpg'" alt="node.js_day03"/></a><div class="content"><a class="title" href="/liuxiaodi01/liuxiaodi01.github.io.git/2021/08/01/%E4%BB%A3%E7%A0%81%E5%9D%97/node_day03/" title="node.js_day03">node.js_day03</a><time datetime="2021-07-31T17:14:18.149Z" title="发表于 2021-08-01 01:14:18">2021-08-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/liuxiaodi01/liuxiaodi01.github.io.git/2021/08/01/%E4%BB%A3%E7%A0%81%E5%9D%97/node_day02/" title="node.js_day02"><img src="https://up.enterdesk.com/edpic/bd/03/fb/bd03fba2b2dc6b78c89acfc79f6ddaf2.jpg" onerror="this.onerror=null;this.src='/liuxiaodi01/liuxiaodi01.github.io.git/img/404.jpg'" alt="node.js_day02"/></a><div class="content"><a class="title" href="/liuxiaodi01/liuxiaodi01.github.io.git/2021/08/01/%E4%BB%A3%E7%A0%81%E5%9D%97/node_day02/" title="node.js_day02">node.js_day02</a><time datetime="2021-07-31T17:12:18.768Z" title="发表于 2021-08-01 01:12:18">2021-08-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/liuxiaodi01/liuxiaodi01.github.io.git/2021/08/01/%E4%BB%A3%E7%A0%81%E5%9D%97/node_day01/" title="node.js_day01"><img src="https://up.enterdesk.com/edpic/b5/bc/bb/b5bcbb4bbfded4c483d30dee88d91ab6.jpg" onerror="this.onerror=null;this.src='/liuxiaodi01/liuxiaodi01.github.io.git/img/404.jpg'" alt="node.js_day01"/></a><div class="content"><a class="title" href="/liuxiaodi01/liuxiaodi01.github.io.git/2021/08/01/%E4%BB%A3%E7%A0%81%E5%9D%97/node_day01/" title="node.js_day01">node.js_day01</a><time datetime="2021-07-31T17:08:19.782Z" title="发表于 2021-08-01 01:08:19">2021-08-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/liuxiaodi01/liuxiaodi01.github.io.git/2021/07/31/%E4%BB%A3%E7%A0%81%E5%9D%97/jQuery/" title="jQuery"><img src="https://up.enterdesk.com/edpic/83/43/a4/8343a401fedc2bb6fb523545012bad6c.jpg" onerror="this.onerror=null;this.src='/liuxiaodi01/liuxiaodi01.github.io.git/img/404.jpg'" alt="jQuery"/></a><div class="content"><a class="title" href="/liuxiaodi01/liuxiaodi01.github.io.git/2021/07/31/%E4%BB%A3%E7%A0%81%E5%9D%97/jQuery/" title="jQuery">jQuery</a><time datetime="2021-07-31T04:00:00.000Z" title="发表于 2021-07-31 12:00:00">2021-07-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/liuxiaodi01/liuxiaodi01.github.io.git/2021/07/31/%E4%BB%A3%E7%A0%81%E5%9D%97/javascript/" title="javascript"><img src="https://up.enterdesk.com/edpic/6e/46/45/6e4645a0831844787b2fad19a21390b9.jpg" onerror="this.onerror=null;this.src='/liuxiaodi01/liuxiaodi01.github.io.git/img/404.jpg'" alt="javascript"/></a><div class="content"><a class="title" href="/liuxiaodi01/liuxiaodi01.github.io.git/2021/07/31/%E4%BB%A3%E7%A0%81%E5%9D%97/javascript/" title="javascript">javascript</a><time datetime="2021-07-31T02:20:00.000Z" title="发表于 2021-07-31 10:20:00">2021-07-31</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By liuxiaodi</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">你好全世界,Hello World</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/liuxiaodi01/liuxiaodi01.github.io.git/js/utils.js"></script><script src="/liuxiaodi01/liuxiaodi01.github.io.git/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
