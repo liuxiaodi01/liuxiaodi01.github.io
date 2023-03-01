@@ -8,7 +8,7 @@ import plugins from "./config/plugins";
 import head from "./config/head";
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
-  title: "the_shy_shy", //站点标题, 建议修改
+  title: "liuxiaodi01", //站点标题, 建议修改
   description: "与君初相识，犹如故人归", //描述, 建议修改
   dest: "dist", //输出目录, 默认是 dist,无需修改
   // base: "/vdoingBlog/",

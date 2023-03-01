@@ -52,7 +52,7 @@ export default <VdoingThemeConfig>{
   // 博主信息，显示在首页侧边栏
   blogger: {
     avatar: "/assets/img/my_photo.png",
-    name: "the_shy_shy",
+    name: "liuxiaodi01",
     slogan: "前端cv高级工程师",
   },
 
