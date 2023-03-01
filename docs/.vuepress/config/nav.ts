@@ -9,6 +9,7 @@ export default <Array<NavItem>>[
     items: [
       { text: "JavaScript", link: "/pages/87ff0b/" }, // 注意link结尾有斜杠和没有斜杠的区别
       { text: "Vue", link: "/pages/ad3c1c/" },
+      { text: "React", link: "/pages/22cb67/" },
     ],
   },
   {
