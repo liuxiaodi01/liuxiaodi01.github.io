@@ -20,12 +20,15 @@ export default <VdoingThemeConfig>{
   tag: true, // 是否打开标签功能，默认true。 如打开，会做的事情有：1. 自动生成的front matter包含标签字段 2.页面中显示与标签相关的信息和模块 3.自动生成标签页面（在@pages文件夹）。如关闭，则反之。
   archive: true, // 是否打开归档功能，默认true。 如打开，会做的事情有：1.自动生成归档页面（在@pages文件夹）。如关闭，则反之。
   bodyBgImg: [
-    "/assets/img/bg2.png",
-    "/assets/img/bg.jpg",
-    "/assets/img/bg3.jpg",
+    "/assets/img/a1.png",
+    "/assets/img/a3.png",
+    "/assets/img/a4.png",
+    "/assets/img/a5.png",
+    "/assets/img/a6.png",
+    "/assets/img/a7.png",
     // "https://cdn.jsdelivr.net/gh/liuxiaodi01/blog-img/bg.jpeg",
   ], // body背景大图，默认无。 单张图片 String | 多张图片 Array, 多张图片时每隔15秒换一张。
-  bodyBgImgOpacity: 0.3, // body背景图透明度，选值 0.1~ 1.0, 默认0.5
+  bodyBgImgOpacity: 0.5, // body背景图透明度，选值 0.1~ 1.0, 默认0.5
   // titleBadge: false, // 文章标题前的图标是否显示，默认true
   // titleBadgeIcons: [ // 文章标题前图标的地址，默认主题内置图标
   //   '图标地址1',

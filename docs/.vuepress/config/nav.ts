@@ -30,19 +30,11 @@ export default <Array<NavItem>>[
     ],
   },
   {
-    text: "技术",
+    text: "大前端",
     items: [
       {
-        text: "webpack",
-        link: "/pages/602b1a/",
-      },
-      {
-        text: "vite",
-        link: "/pages/97221b/",
-      },
-      {
-        text: "工具类封装",
-        link: "/pages/b58d10/",
+        text: "解锁“大前端思维”",
+        link: "/pages/3c808d/",
       },
     ],
   },
