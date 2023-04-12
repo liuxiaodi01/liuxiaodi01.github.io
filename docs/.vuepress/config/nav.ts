@@ -24,6 +24,10 @@ export default <Array<NavItem>>[
         link: "/pages/94dcf9/",
       },
       {
+        text: "Koa",
+        link: "/pages/a74457/",
+      },
+      {
         text: "数据库",
         link: "/pages/fabe13/",
       },
