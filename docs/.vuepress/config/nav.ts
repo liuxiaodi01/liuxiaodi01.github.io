@@ -17,7 +17,7 @@ export default <Array<NavItem>>[
     items: [
       {
         text: "NestJS",
-        link: "/pages/ea8999/",
+        link: "/pages/a0a2e3/",
       },
       {
         text: "Express",
